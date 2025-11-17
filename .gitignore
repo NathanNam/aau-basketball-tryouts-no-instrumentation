@@ -1,23 +1,69 @@
+# Dependencies
 node_modules
 package-lock.json
 yarn.lock
 
-.DS_Store
-.cache
-.env
-.vercel
+# Build outputs
 .output
 .nitro
 /build/
 /api/
 /server/build
-/public/build# Sentry Config File
-.env.sentry-build-plugin
+/public/build
+dist/
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Cache
+.cache
+.tanstack
+.vite
+
+# Deployment
+.vercel
+.netlify
+
+# Testing
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-.tanstack
+coverage/
 
-# Scheduler data
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+.fleet
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Sentry
+.env.sentry-build-plugin
+.sentryclirc
+
+# Application specific
 .scraper-data/
