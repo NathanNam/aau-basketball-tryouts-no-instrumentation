@@ -41,10 +41,10 @@ sudo -u "$APP_USER" -H bash -lc "
   fi
 
   echo '🔍 Verifying build output...'
-  if [ ! -f \".output/server/index.mjs\" ]; then
-    echo '❌ Build output not found at .output/server/index.mjs'
-    echo '📁 Contents of .output directory:'
-    ls -la .output/ || echo 'No .output directory found!'
+  if [ ! -f \"dist/server/server.js\" ]; then
+    echo '❌ Build output not found at dist/server/server.js'
+    echo '📁 Contents of dist directory:'
+    ls -la dist/ || echo 'No dist directory found!'
     exit 1
   fi
   echo '✅ Build output verified'

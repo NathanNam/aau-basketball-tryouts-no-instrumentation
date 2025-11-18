@@ -1,4 +1,4 @@
-import cron from 'node-cron'
+import cron, { type ScheduledTask } from 'node-cron'
 import { schedulerConfig } from './config'
 import { scrapeAllWebsites, detectChanges } from './scraper'
 import {
@@ -9,7 +9,7 @@ import {
 } from './storage'
 
 let isRunning = false
-let scheduledTask: cron.ScheduledTask | null = null
+let scheduledTask: ScheduledTask | null = null
 
 /**
  * Execute the scraping job
@@ -114,7 +114,6 @@ export async function startScheduler(): Promise<void> {
       executeScrapeJob()
     },
     {
-      scheduled: true,
       timezone: schedulerConfig.timezone,
     }
   )
@@ -123,9 +122,6 @@ export async function startScheduler(): Promise<void> {
     `[Scheduler] ✅ Scheduler started with schedule: ${schedulerConfig.schedule}`
   )
   console.log(`[Scheduler] Timezone: ${schedulerConfig.timezone}`)
-  console.log(
-    `[Scheduler] Next run: ${scheduledTask.nextDate().toISO()}`
-  )
 
   // Run once immediately on startup
   console.log('[Scheduler] Running initial scrape...')
@@ -150,12 +146,10 @@ export function getSchedulerStatus(): {
   enabled: boolean
   running: boolean
   schedule: string
-  nextRun: string | null
 } {
   return {
     enabled: schedulerConfig.enabled,
     running: scheduledTask !== null,
     schedule: schedulerConfig.schedule,
-    nextRun: scheduledTask ? scheduledTask.nextDate().toISO() || null : null,
   }
 }

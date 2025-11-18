@@ -34,21 +34,21 @@ if [ $BUILD_EXIT_CODE -ne 0 ]; then
   exit 1
 fi
 
-echo "📁 Checking .output directory:"
-if [ -d ".output" ]; then
-  echo "✅ .output directory exists"
+echo "📁 Checking dist directory:"
+if [ -d "dist" ]; then
+  echo "✅ dist directory exists"
   echo ""
-  echo "Contents of .output/:"
-  ls -la .output/
+  echo "Contents of dist/:"
+  ls -la dist/
   echo ""
-  if [ -d ".output/server" ]; then
-    echo "Contents of .output/server/:"
-    ls -la .output/server/
+  if [ -d "dist/server" ]; then
+    echo "Contents of dist/server/:"
+    ls -la dist/server/
   else
-    echo "❌ .output/server directory not found!"
+    echo "❌ dist/server directory not found!"
   fi
 else
-  echo "❌ .output directory not found!"
+  echo "❌ dist directory not found!"
 fi
 echo ""
 
