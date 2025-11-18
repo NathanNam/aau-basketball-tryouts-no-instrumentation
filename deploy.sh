@@ -7,7 +7,7 @@ APP_DIR="$APP_HOME/aau-basketball-tryouts"
 APP_NAME="aau-tryouts"
 LOG_DIR="$APP_HOME/logs"
 # Use production build for better performance
-START_COMMAND="NODE_ENV=production pnpm start"
+START_COMMAND="NODE_ENV=production node dist/server/server.js"
 
 echo "🔄 Starting production deploy for $APP_NAME as $APP_USER..."
 
@@ -55,7 +55,6 @@ sudo -u "$APP_USER" -H bash -lc "
   echo '🚀 Starting app via pm2 (production mode)...'
   pm2 start \"$START_COMMAND\" \
     --name \"$APP_NAME\" \
-    --env production \
     --log \"$LOG_DIR/$APP_NAME.log\" \
     --error \"$LOG_DIR/$APP_NAME-error.log\" \
     --max-memory-restart 500M \
