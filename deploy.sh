@@ -7,7 +7,7 @@ APP_DIR="$APP_HOME/aau-basketball-tryouts"
 APP_NAME="aau-tryouts"
 LOG_DIR="$APP_HOME/logs"
 # Use production build for better performance
-START_COMMAND="NODE_ENV=production node dist/server/server.js"
+START_COMMAND="NODE_ENV=production node server-entry.js"
 
 echo "🔄 Starting production deploy for $APP_NAME as $APP_USER..."
 
