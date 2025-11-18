@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-800 text-white mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-3">About</h3>
             <p className="text-gray-400 text-sm">
@@ -18,19 +18,6 @@ export function Footer() {
             <p className="text-gray-400 text-sm">
               San Francisco, Oakland, San Jose, East Bay, South Bay, North Bay,
               and Peninsula regions.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-3">Contact</h3>
-            <p className="text-gray-400 text-sm">
-              Have a tryout to list or feedback?
-              <br />
-              <a
-                href="mailto:info@aautryouts.com"
-                className="text-primary-400 hover:text-primary-300 transition-colors"
-              >
-                info@aautryouts.com
-              </a>
             </p>
           </div>
         </div>
